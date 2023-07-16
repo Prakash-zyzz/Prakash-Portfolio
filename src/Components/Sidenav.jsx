@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {AiOutlineMenu,AiOutlineHome,AiOutlineProject,AiOutlineMail} from "react-icons/ai";
+import {AiOutlineMenu,AiOutlineHome,AiOutlineProject,AiOutlineMail,AiOutlineClose} from "react-icons/ai";
 import {BsPerson} from "react-icons/bs" 
 import {GrProjects} from "react-icons/gr" 
 
@@ -13,7 +13,9 @@ const Sidenav = () => {
 
   return (
     <div>
-        <AiOutlineMenu onClick={handleNav} className='absolute top-4 right-4 z-[99] md:hidden text-black-2000' />
+        <div onClick={handleNav} className='absolute top-4 right-4 z-[99] md:hidden text-black-2000'>
+        {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+        </div>
         {
           nav ? (
                 <div className='fixed w-full h-screen bg-white/90 flex flex-col justify-center items-center z-20'>
